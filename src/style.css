@@ -1,0 +1,439 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Khand', sans-serif;
+  font-size: small;
+  padding: 0;
+  margin: 0;
+}
+
+/* header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  min-height: 5%;
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1.4em;
+  background-color: #222;
+  color: #fff;
+
+  div {
+    padding: 0.6em;
+  }
+
+  form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+
+    input {
+      width: 22rem;
+      font-family: 'Ubuntu Condensed', sans-serif;
+      color: #666;
+      border-radius: 1.3em;
+      padding: 0.83em 0.5em 0.83em 2.65em;
+      border: none;
+    }
+
+    img {
+      position: absolute;
+      left: 10px;
+      top: 7px;
+      color: #666;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    button {
+      display: none;
+    }
+  }
+}
+
+hr {
+  display: block;
+  height: 1.2px;
+  width: 80%;
+  background-color: #fff;
+  margin-left: 0;
+  border: none;
+} */
+
+.error {
+  font-size: 2em;
+  padding: 2em;
+}
+
+.loadingDiv {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+}
+
+.search{
+  height: 20px;
+  border-radius: 5px;
+  padding: 1px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color:white
+}
+.fsearch{
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: medium;
+}
+
+.weatherByTheHour {
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+}
+
+.weatherByTheHour {
+  flex-shrink: 0;
+  justify-content: space-between;
+  background-color: #222;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-top: 20px;
+  width: 1330px
+}
+
+.renderedHourlyWeather {
+  display: flex;
+  flex-direction: row;
+  align-items: inherit;
+  color: #fff;
+}
+
+.weekday {
+  font-size: 1.2rem;
+  background-color: #aaff00;
+  color: #000;
+  text-transform: uppercase;
+  padding: 10px 1px;
+  text-orientation: mixed;
+  writing-mode: tb-rl;
+  margin-right: 8px;
+}
+
+.hourlyWeatherItem {
+  display: inline-block;
+  font-size: 1.4em;
+  padding: 3px 10px 3px 5px;
+
+  
+}
+
+.rightPanel hr {
+  margin-top: 1em;
+  width: 90%;
+}
+
+.renderedWeather {
+  position: relative;
+  height: 50%;
+  /* min-height: 62vh; */
+  flex-shrink: 1;
+  justify-content: space-evenly;
+  align-items: center;
+  background-blend-mode: darken;
+  background: rgba(8, 8, 8, .68) url('https://source.unsplash.com/1920x1080/?rain') center center;
+  background-size: cover;
+  margin: 0 0 .2rem 0;
+  padding: 29px;
+  border-radius: 20px;
+}
+
+.cityName {
+  text-align: center;
+  font-size: large;
+  margin: 4vw 3vw 1vw;
+}
+.cityFName {
+  text-align: center;
+  font-size: x-large;
+  margin: 4vw 3vw 1vw;
+}
+
+.todayWeather {
+  position: relative;
+  /* padding: 17% 0 18%; */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.todayWeather, .todayWeather hr {
+  /* margin: 10px; */
+  text-align: center;
+  font-size: large;
+}
+.large-font{
+  font-size: large;
+}
+.svg-icon{
+  width:50px !important;
+  height:50px !important;
+}
+.dailyWeather {
+  font-size: large;
+  padding: 3.8rem 2rem 2rem;
+  display: flex;
+  flex-shrink: 1;
+  flex-wrap: nowrap;
+  align-self: center;
+  /* width: 500px; */
+  /* max-width: 32vw; */
+}
+.date,.xlarge-font {
+  font-size: x-large;
+}
+.tNow, .todayWeather .tNow {
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+}
+.padding7{
+  padding: 7px;
+}
+
+.leftPanel {
+  flex-grow: 1;
+}
+.weatherIcon{
+  width:27px;
+}
+hr {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.timeNow {
+  margin-bottom: 40px;
+}
+
+.renderedWeather .cOrF {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: transparent;
+  color: #fff;
+  font-size: small;
+  padding: 5px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+.fcOrF{
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  background-color: transparent;
+  color: #fff;
+  font-size: medium;
+  padding: 8px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.icon img {
+  width: 5rem;
+}
+
+.sunCycle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 47%;
+  margin: 0 auto;
+  width:300px;
+  height: 150px;
+  border: 3px solid #d84315;
+  border-bottom: 0;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+}
+/* .sunCycleF {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 47%;
+  margin: 0 auto;
+  width:600px;
+  height: 300px;
+  border: 3px solid #d84315;
+  border-bottom: 0;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+} */
+
+.sun div {
+  position: absolute;
+  width:27px;
+  height: 27px;
+  padding: 0;
+  margin-left: 14px;
+}
+
+.sunrise div, .sunset div {
+  position: absolute;
+  bottom: -38px;
+  width: 27px;
+}
+
+.sunrise div {
+  left: -17px;
+}
+
+.sunset div {
+  right: -13px;
+}
+
+.sunriseTime, .sunsetTime {
+  position: absolute;
+  bottom: -35px;
+  font-size: medium;
+}
+
+.sunrise span {
+  left: 17px;
+}
+
+.sunset span {
+  right: 23px;
+}
+/* 
+@media screen and (max-width: 1200px) {
+  .renderedWeather {
+    height: auto;
+    background-blend-mode: darken;
+    //background: rgba(8, 8, 8, .68) url('https://source.unsplash.com/720x405/?rain') center center; 
+    background-size: cover;
+    padding: 10px 20px 30px 50px;
+  } */
+
+  /* .renderedWeather, .rightPanel, .dailyWeather {
+    display: block;
+  }
+
+  .rightPanel, .dailyWeather, .forecastSummary {
+    max-width: 96%;
+  } */
+
+  /* .cityName {
+    margin: 9vw 1vw 2vw;
+    font-size: larger;
+  }
+} */
+
+@media screen and (max-width: 900px) {
+  .sunCycle {
+    width: 400px;
+    height: 200px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+  }
+
+  .todayWeather div {
+    font-size: 1.8rem;
+  }
+}
+
+ /* @media screen and (max-width: 600px) {
+  .renderedWeather {
+    padding: 10px;
+    background: linear-gradient(280deg, rgba(4, 0, 255, 1) 0%, rgba(30, 81, 125, 1) 100%);
+  } 
+
+  .todayWeather div {
+    font-size: 1.7rem;
+  }
+
+  .renderedWeather .cOrF {
+    top: 15px;
+    left: 72%;
+    font-size: 0.9rem;
+  }
+
+  .icon img {
+    width: 4rem;
+    margin-bottom: 8px;
+  }
+
+  .dailyWeather, .dailyWeather .date, .tNow {
+    font-size: 2rem;
+  }
+
+  .dailyWeather .date {
+    margin-bottom: 6px;
+  }
+
+  .poweredBy {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+} */
+
+@media screen and (max-width: 450px) {
+  .sunCycle {
+    display: none;
+  }
+  .github-corner {
+    display: none
+  }
+}
+
+/* GitHub corner start */
+
+.github-corner {
+  fill: #05668d;
+  color: #ebf2fa;
+  position: absolute;
+  top: 0.6em;
+  right: 0.6em;
+  border: 0;
+  z-index: 1;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0)
+  }
+  20%, 60% {
+    transform: rotate(-25deg)
+  }
+  40%, 80% {
+    transform: rotate(10deg)
+  }
+}
+
+/* GitHub corner end */
